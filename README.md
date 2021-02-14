@@ -1,4 +1,4 @@
-# Whonix Docker
+# Docker Whonix
 
 I need this for a project. I have started by creating a Dockerfile for the whonix-gateway-cli. It doesn't complete the build yet but I feel like I'm close to getting it working.
 

@@ -36,6 +36,8 @@ W: Some index files failed to download. They have been ignored, or old ones used
 ++ errorhandlergeneral ERR
 ```
 
+Wonderful reply regarding error: [build-error-apt-debian-base-on-docker/11132/2](https://forums.whonix.org/t/build-error-apt-debian-base-on-docker/11132/2)
+
 ## Related Repos
 
 [Whonix-Packer](https://github.com/TensorTom/Whonix-Packer) - Trying to deploy Whonix everywhere.

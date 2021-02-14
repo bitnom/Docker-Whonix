@@ -26,7 +26,8 @@ RUN apt-get install -y net-tools tor;
 COPY torrc.sh /root
 RUN sh ~/torrc.sh
 # START/RESTART TOR AND UPGRADE TO WHONIX PACKAGES
-RUN 
+RUN pkill tor;\
+tor 2>&1 &\
 sleep 2;\
 apt-get update && apt-get dist-upgrade -y
 

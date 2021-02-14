@@ -36,7 +36,11 @@ W: Some index files failed to download. They have been ignored, or old ones used
 ++ errorhandlergeneral ERR
 ```
 
+## Related Repos
 
+[Whonix-Packer](https://github.com/TensorTom/Whonix-Packer) - Trying to deploy Whonix everywhere.
+
+[Dockernymous](https://github.com/bcapptain/dockernymous) - Not the same goals (Not exactly Whonix) but still helpful.
 
 
 ### MIT License

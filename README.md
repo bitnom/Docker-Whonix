@@ -44,5 +44,8 @@ Wonderful reply regarding error: [build-error-apt-debian-base-on-docker/11132/2]
 
 [Dockernymous](https://github.com/bcapptain/dockernymous) - Not the same goals (Not exactly Whonix) but still helpful.
 
+## Contribute
+
+All are welcome to help. Make a branch for each change & submit PR as you will.
 
 ### MIT License

@@ -1,8 +1,10 @@
 # Docker-Whonix
 
-I need this for a project. I have started by creating a Dockerfile for the whonix-gateway-cli. It doesn't complete the build yet but I feel like I'm close to getting it working.
+I needed this for a project. I started by creating a Dockerfile for the whonix-gateway-cli. It doesn't complete the build yet but I feel like I'm close to getting it working.
 
-**Contributors welcome**
+## Update
+
+I gave up on this repo some years ago without finding a solution, instead opting to use VMs at the time. See [tabletseeker/whonix_builder](https://github.com/tabletseeker/whonix_builder) for a recent, working solution.
 
 ## Current Build Error
 

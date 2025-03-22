@@ -1,7 +1,7 @@
 # whonix-docker:gateway-cli
 #
 # VERSION               0.0.1
-FROM debian:buster as baseimage
+FROM debian:bullseye as baseimage
 ENV DEBIAN_FRONTEND noninteractive
 USER root
 # RUN dmesg | grep eth
@@ -13,8 +13,12 @@ wget https://www.whonix.org/patrick.asc -O ~/patrick.asc;\
 gpg --import ~/patrick.asc;\
 gpg --keyid-format long --import --import-options show-only --with-fingerprint ~/patrick.asc;\
 sudo apt-key --keyring /etc/apt/trusted.gpg.d/whonix.gpg add ~/patrick.asc;\
-echo "deb http://deb.whonix.org buster main" | tee /etc/apt/sources.list.d/whonix.list;\
+echo "deb http://deb.whonix.org bullseye main" | tee /etc/apt/sources.list.d/whonix.list;\
 apt-get update && apt-get upgrade -y;\
+wget https://www.kicksecure.com/derivative.asc;\
+mv derivative.asc /usr/share/keyrings/derivative.asc;\
+echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list;\
+apt-get update;\
 apt-get install -y genmkfile
 RUN adduser --quiet --disabled-password --home /home/user --gecos 'user,,,,' user;\
 echo "user:changeme" | chpasswd;\
@@ -37,10 +41,10 @@ USER user
 RUN wget https://www.whonix.org/patrick.asc -O ~/patrick.asc;\
 gpg --import ~/patrick.asc;\
 gpg --keyid-format long --import --import-options show-only --with-fingerprint ~/patrick.asc;\
-git clone --depth=1 --branch 15.0.1.6.4-developers-only --jobs=4 --recurse-submodules --shallow-submodules https://gitlab.com/whonix/Whonix.git ~/Whonix;\
+git clone --depth=1 --branch 16.0.4.2-developers-only --jobs=4 --recurse-submodules --shallow-submodules https://gitlab.com/whonix/Whonix.git ~/Whonix;\
 cd ~/Whonix && git fetch;\
-git verify-tag 15.0.1.6.4-developers-only;\
-git checkout --recurse-submodules 15.0.1.6.4-developers-only
+git verify-tag 16.0.4.2-developers-only;\
+git checkout --recurse-submodules 16.0.4.2-developers-only
 USER root
 RUN /bin/bash -c 'cd /home/user/Whonix;\
 sudo /home/user/Whonix/whonix_build --flavor whonix-gateway-cli --target root --build'
